@@ -1,6 +1,5 @@
 package com.niit.ekartbackend.domain;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,39 +15,56 @@ public class Product {
 	
 	@Id
 	@GeneratedValue
-	private String id;
+	private String productid;
 
-	@Column(name="name")
-	private String name;
+	public String getProductid() {
+		return productid;
+	}
+
+	public void setProductid(String productid) {
+		this.productid = productid;
+	}
+
+	private String productname;
 	
 	private String category;
 	
+	private String description;
+	
+	private int quantity;
+	
+	private String supplier;
+	  
+	public String getSupplier() {
+		return supplier;
+	}
+
+	public void setSupplier(String supplier) {
+		this.supplier = supplier;
+	}
+
 	private String brand;
 	
-	private String price;
+	private int price;
 	
 	private String color;
 	
 	
-	public String getId() {
-		return id;
+
+
+	
+
+	public String getProductname() {
+		return productname;
 	}
 
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+	public void setProductname(String productname) {
+		this.productname = productname;
 	}
 
 	public String getCategory() {
 		return category;
-	}
+ 	}
 
 	public void setCategory(String category) {
 		this.category = category;
@@ -62,11 +78,11 @@ public class Product {
 		this.brand = brand;
 	}
 
-	public String getPrice() {
+	public int getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 
@@ -77,6 +93,23 @@ public class Product {
 	public void setColor(String color) {
 		this.color = color;
 	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
 
 	
 

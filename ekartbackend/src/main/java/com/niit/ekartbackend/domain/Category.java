@@ -18,14 +18,14 @@ public class Category {
 	private String id;
 	
 	@Column(name = "name")
-	private String name;
+	private String categoryname;
 	
-	public String getName() {
-		return name;
+	public String getCategoryname() {
+		return categoryname;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setCategoryname(String categoryname) {
+		this.categoryname = categoryname;
 	}
 
 	private String description;

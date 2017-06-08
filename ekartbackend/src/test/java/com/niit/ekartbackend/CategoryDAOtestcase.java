@@ -39,7 +39,7 @@ public class CategoryDAOtestcase {
 
 		category.setName("women");
 		category.setDescription("male");
-		boolean flag = categoryDAO.save(category);
+		boolean flag = categoryDAO.saveOrUpdate(category);
 		assertEquals("createCategoryDAOTestCase", true, flag);
 
 	}

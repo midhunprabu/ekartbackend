@@ -23,10 +23,10 @@ public class CategoryDAOImpl implements CategoryDAO {
 		this.setSessionFactory(sessionFactory);
 	}
 
-	public boolean save(Category category) {
+	public boolean saveOrUpdate(Category category) {
 		try
 		{
-		sessionFactory.getCurrentSession().save(category);
+		sessionFactory.getCurrentSession().saveOrUpdate(category);
 		}catch (Exception e) {
 			//if any excpetion comes during execute of try block, catch will excute
 			e.printStackTrace();
@@ -35,7 +35,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		return true;
 	}
 
-	public boolean update(Category category) {
+	/*public boolean update(Category category) {
 		try
 		{
 		sessionFactory.getCurrentSession().update(category);
@@ -45,7 +45,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 			return false;
 		}
 		return true;
-	}
+	}*/
 
 	@SuppressWarnings("unchecked")
 	public List<Category> list() {
@@ -74,5 +74,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 sessionFactory.getCurrentSession().delete(categoryToDelete);
 		
 	}
+
+	
 	
 }

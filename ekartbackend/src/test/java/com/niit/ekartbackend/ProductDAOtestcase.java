@@ -41,7 +41,7 @@ public class ProductDAOtestcase {
 		product.setPrice("3350");
 		product.setColor("black");
 		
-		boolean flag =  productDAO.save(product);
+		boolean flag =  productDAO.saveOrUpdate(product);
 		assertEquals("createProductDAOTestCase",true,flag);
 		
 	}

@@ -17,26 +17,26 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.ekartbackend.domain.Billing;
 import com.niit.ekartbackend.domain.Category;
-import com.niit.ekartbackend.domain.Mycart;
 import com.niit.ekartbackend.domain.Product;
 import com.niit.ekartbackend.domain.Role;
-import com.niit.ekartbackend.domain.Shipping;
+import com.niit.ekartbackend.domain.Shippingaddress;
 import com.niit.ekartbackend.domain.Supplier;
 import com.niit.ekartbackend.domain.User;
+import com.niit.ekartbackend.dao.CartDAO;
+import com.niit.ekartbackend.daoimpl.CartDAOImpl;
+import com.niit.ekartbackend.domain.Cart;
 import com.niit.ekartbackend.dao.BillingDAO;
 import com.niit.ekartbackend.dao.CategoryDAO;
-import com.niit.ekartbackend.dao.MycartDAO;
 import com.niit.ekartbackend.dao.ProductDAO;
 import com.niit.ekartbackend.dao.RoleDAO;
-import com.niit.ekartbackend.dao.ShippingDAO;
+import com.niit.ekartbackend.dao.ShippingaddressDAO;
 import com.niit.ekartbackend.dao.SupplierDAO;
 import com.niit.ekartbackend.dao.UserDAO;
 import com.niit.ekartbackend.daoimpl.BillingDAOImpl;
 import com.niit.ekartbackend.daoimpl.CategoryDAOImpl;
-import com.niit.ekartbackend.daoimpl.MycartDAOImpl;
 import com.niit.ekartbackend.daoimpl.ProductDAOImpl;
 import com.niit.ekartbackend.daoimpl.RoleDAOImpl;
-import com.niit.ekartbackend.daoimpl.ShippingDAOImpl;
+import com.niit.ekartbackend.daoimpl.ShippingaddressDAOImpl;
 import com.niit.ekartbackend.daoimpl.SupplierDAOImpl;
 import com.niit.ekartbackend.daoimpl.UserDAOImpl;
 
@@ -81,8 +81,8 @@ public class ApplicationContextConfig {
 		sessionBuilder.addAnnotatedClass(Category.class);
 		sessionBuilder.addAnnotatedClass(Product.class);
 		sessionBuilder.addAnnotatedClass(Supplier.class);
-		sessionBuilder.addAnnotatedClass(Shipping.class);
-		sessionBuilder.addAnnotatedClass(Mycart.class);
+		sessionBuilder.addAnnotatedClass(Shippingaddress.class);
+		sessionBuilder.addAnnotatedClass(Cart.class);
 		sessionBuilder.addAnnotatedClass(Role.class);
 		sessionBuilder.addAnnotatedClass(Billing.class);
 		// add all other domain object classes
@@ -128,15 +128,15 @@ public class ApplicationContextConfig {
 	}
 	
 	@Autowired(required=true)
-	@Bean(name = "ShippingDAO")
-	public ShippingDAO getshippingDAO(SessionFactory sessionFactory) {
-		return new ShippingDAOImpl(sessionFactory);
+	@Bean(name = "ShippingaddressDAO")
+	public ShippingaddressDAO getshippingDAO(SessionFactory sessionFactory) {
+		return new ShippingaddressDAOImpl(sessionFactory);
 	}
 	
 	@Autowired(required=true)
-	@Bean(name = "MycartDAO")
-	public MycartDAO getmycartDAO(SessionFactory sessionFactory) {
-		return new MycartDAOImpl(sessionFactory);
+	@Bean(name = "CartDAO")
+	public CartDAO getcartDAO(SessionFactory sessionFactory) {
+		return new CartDAOImpl(sessionFactory);
 	}
 	
 	@Autowired(required=true)

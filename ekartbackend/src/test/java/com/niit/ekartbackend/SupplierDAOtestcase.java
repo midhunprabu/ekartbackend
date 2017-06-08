@@ -39,11 +39,11 @@ public class SupplierDAOtestcase {
 	{
 		supplier.setEmail("ram@gmail.com");
 		supplier.setName("ram");
-		supplier.setAddress("4,sampathnagar,erode");
+		supplier.setAddress("4,sampathnagar,erode"); 
 		supplier.setPhone("9999999999");
 		
 		
-		boolean flag =  supplierDAO.save(supplier);
+		boolean flag =  supplierDAO.saveOrUpdate(supplier);
 		assertEquals("createSupplierDAOTestCase",true,flag);
 		
 	}

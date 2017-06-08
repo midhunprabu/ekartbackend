@@ -89,16 +89,14 @@ public class UserDAOImpl implements UserDAO {
 		
 		return  sessionFactory.getCurrentSession().createQuery("from User").list();
 	}
-
 	public User get(String id) {
-		
-		//get method get the date from user table based on primary key i.e., id
-		// and set it to User class
-		//like select * from user where id = ?
-	  return 	(User)  sessionFactory.getCurrentSession().get(User.class, id);
-		
-	}
 
+		// get method get the date from user table based on primary key i.e., id
+		// and set it to User class
+		// like select * from user where id = ?
+		return (User) sessionFactory.getCurrentSession().get(User.class, id);
+
+	}
 	public User getByEmailId(String email) {
 		String hql = "from User where email ='"+ email +"'";
 		org.hibernate.Query query = sessionFactory.getCurrentSession().createQuery(hql);

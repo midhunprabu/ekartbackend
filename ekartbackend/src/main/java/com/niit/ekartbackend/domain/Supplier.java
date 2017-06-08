@@ -15,10 +15,18 @@ public class Supplier {
 
 	@Id
 	@GeneratedValue
-	private String id;
+	private String supplierid;
 	
+	public String getSupplierid() {
+		return supplierid;
+	}
+
+	public void setSupplierid(String supplierid) {
+		this.supplierid = supplierid;
+	}
+
 	@Column(name="name")
-	private String name;
+	private String suppliername;
 	
 	private String address;
 	
@@ -34,20 +42,15 @@ public class Supplier {
 
 	private String phone;
 	
-	public String getId() {
-		return id;
+
+	
+
+	public String getSuppliername() {
+		return suppliername;
 	}
 
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+	public void setSuppliername(String suppliername) {
+		this.suppliername = suppliername;
 	}
 
 	public String getAddress() {
@@ -64,6 +67,11 @@ public class Supplier {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public void setName(String string) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

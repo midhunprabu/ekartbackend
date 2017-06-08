@@ -40,7 +40,7 @@ import com.niit.ekartbackend.domain.Supplier;
 			return 	(Supplier)  sessionFactory.getCurrentSession().get(Supplier.class, id);
 		}
 
-		public boolean save(Supplier supplier) {
+		public boolean saveOrUpdate(Supplier supplier) {
 			try
 			{
 			sessionFactory.getCurrentSession().save(supplier);
@@ -52,36 +52,15 @@ import com.niit.ekartbackend.domain.Supplier;
 			return true;
 		}
 
-		public boolean update(Supplier supplier) {
-			try
-			{
-			sessionFactory.getCurrentSession().update(supplier);
-			}catch (Exception e) {
-				//if any excpetion comes during execute of try block, catch will excute
-				e.printStackTrace();
-				return false;
-			}
-			return true;
-		}
-
-
-		public boolean save(@SuppressWarnings("rawtypes") java.util.function.Supplier supplier) {
-			// TODO Auto-generated method stub
-			return false;
-		}
-
-
-		public boolean update(@SuppressWarnings("rawtypes") java.util.function.Supplier supplier) {
-			// TODO Auto-generated method stub
-			return false;
-		}
 		
 		public void delete(String id) {
 			Supplier supplierToDelete = new Supplier();
-			supplierToDelete.setId(id);
+			supplierToDelete.setSupplierid(id);
 	sessionFactory.getCurrentSession().delete(supplierToDelete);
 			
 		}
+
+
 
 	}
 
